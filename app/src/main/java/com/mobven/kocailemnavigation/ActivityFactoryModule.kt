@@ -1,5 +1,6 @@
 package com.mobven.kocailemnavigation
 
+import com.mobven.core.ActivityFactoryKeys
 import com.mobven.core.DefaultActivityFactory
 import com.mobven.featurea.ActivityAFactoryImpl
 import com.mobven.featureb.ActivityBFactoryImpl
@@ -24,4 +25,11 @@ object ActivityFactoryModule {
     fun provideActivityBFactory(): DefaultActivityFactory {
         return ActivityBFactoryImpl()
     }
+
+    @ActivityFactoryKeys.MainActivity
+    @Provides
+    fun provideActivityMainFactory(): DefaultActivityFactory {
+        return ActivityBFactoryImpl()
+    }
+
 }

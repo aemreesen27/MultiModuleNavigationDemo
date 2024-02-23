@@ -5,6 +5,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
+import com.mobven.core.ActivityFactory
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.EntryPointAccessors
 
@@ -19,12 +20,12 @@ class MainActivity : AppCompatActivity() {
         val activityA = factory.getActivityA().instantiate()
         val activityB = factory.getActivityB().instantiate()
 
-        findViewById<MaterialButton>(R.id.btn_a).setOnClickListener {
+        findViewById<MaterialButton>(R.id.btn_go_to_a).setOnClickListener {
             val intent = Intent(this, activityA::class.java)
             startActivity(intent)
         }
 
-        findViewById<MaterialButton>(R.id.btn_b).setOnClickListener {
+        findViewById<MaterialButton>(R.id.btn_go_to_b).setOnClickListener {
             val intent = Intent(this, activityB::class.java)
             startActivity(intent)
         }

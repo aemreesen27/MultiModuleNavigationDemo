@@ -1,6 +1,5 @@
-package com.mobven.kocailemnavigation
+package com.mobven.core
 
-import com.mobven.core.DefaultActivityFactory
 import dagger.hilt.EntryPoint
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ActivityComponent
@@ -16,6 +15,9 @@ interface ActivityFactory {
     @ActivityFactoryKeys.ActivityB
     fun getActivityB(): DefaultActivityFactory
 
+    @ActivityFactoryKeys.MainActivity
+    fun getMainActivity(): DefaultActivityFactory
+
 }
 
 
@@ -28,4 +30,9 @@ abstract class ActivityFactoryKeys {
     @Qualifier
     @Retention(AnnotationRetention.BINARY)
     annotation class ActivityB
+
+    @Qualifier
+    @Retention(AnnotationRetention.BINARY)
+    annotation class MainActivity
+
 }
