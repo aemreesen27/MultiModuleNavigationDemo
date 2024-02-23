@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.material.button.MaterialButton
+import com.google.android.material.textview.MaterialTextView
 import com.mobven.core.ActivityFactory
 import dagger.hilt.android.AndroidEntryPoint
 import dagger.hilt.android.EntryPointAccessors
@@ -14,6 +15,8 @@ class ActivityA : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_a)
 
+        val myData = intent.getStringExtra("key")
+        findViewById<MaterialTextView>(R.id.tv_title).text = myData
 
         val factory = EntryPointAccessors.fromActivity(this, ActivityFactory::class.java)
         val activityMain = factory.getMainActivity().instantiate()

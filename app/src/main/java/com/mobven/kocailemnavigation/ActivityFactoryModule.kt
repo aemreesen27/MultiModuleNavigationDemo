@@ -29,7 +29,7 @@ object ActivityFactoryModule {
     @ActivityFactoryKeys.MainActivity
     @Provides
     fun provideActivityMainFactory(): DefaultActivityFactory {
-        return ActivityBFactoryImpl()
+        return ActivityMainFactoryImpl()
     }
 
 }

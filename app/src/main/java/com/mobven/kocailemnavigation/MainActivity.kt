@@ -22,6 +22,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<MaterialButton>(R.id.btn_go_to_a).setOnClickListener {
             val intent = Intent(this, activityA::class.java)
+            val extras = Bundle()
+            extras.putString("key", "data")
+            intent.putExtras(extras)
+
             startActivity(intent)
         }
 
